@@ -4,10 +4,10 @@ After=network.target
 
 [Service]
 Type=simple
-Environment=LD_LIBRARY_PATH=/opt/teamspeak3-server
-WorkingDirectory=/opt/teamspeak3-server
-ExecStart=/opt/teamspeak3-server/ts3server-bin inifile=/etc/teamspeak3-server/server.conf
-ExecStop=/bin/kill -15 $MAINPID
+Environment=LD_LIBRARY_PATH=/home/teamspeak
+WorkingDirectory=/home/teamspeak
+ExecStart=/home/teamspeak/ts3server_startscript.sh start
+ExecStop=/home/teamspeak/ts3server_startscript.sh stop
 StandardOutput=syslog
 StandardError=syslog
 User=teamspeak3
