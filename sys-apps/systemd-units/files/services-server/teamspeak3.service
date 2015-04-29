@@ -6,13 +6,14 @@ After=network.target
 Type=simple
 Environment=LD_LIBRARY_PATH=/home/teamspeak
 WorkingDirectory=/home/teamspeak
-ExecStart=/home/teamspeak/ts3server_startscript.sh start
-ExecStop=/home/teamspeak/ts3server_startscript.sh stop
+ExecStart=/home/teamspeak/ts3server_linux_amd64
+ExecStop=/bin/kill -15 $MAINPID
 StandardOutput=syslog
 StandardError=syslog
-User=teamspeak3
-Group=teamspeak3
+User=teamspeak
+Group=teamspeak
 Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
